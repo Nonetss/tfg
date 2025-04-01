@@ -5,11 +5,11 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use ieee.numeric_std.all;
  
  
-ENTITY mux_tb IS
+ENTITY mux_n_tb IS
 generic (C: integer:=1);
-END mux_tb;
+END mux_n_tb;
  
-ARCHITECTURE behavior OF mux_tb IS 
+ARCHITECTURE behavior OF mux_n_tb IS 
  
  
     COMPONENT multiplexor
