@@ -1,0 +1,7 @@
+# Archivo de constraints para biestable tipo D en Alhambra II
+
+set_io J     34   # Puerto necesario para la compilación
+set_io K     33   # Puerto necesario para la compilación
+set_io clk   49   # Reloj (CLK 12MHz en Alhambra II)
+set_io reset 90   # Botón de reset (por ejemplo, SW4)
+set_io Q     45   # Salida hacia LED (LED0)
