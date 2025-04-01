@@ -1,0 +1,12 @@
+# Archivo contador.pcf - Asignación de pines para el contador
+
+# Señales de control
+set_io clk        49     # Pin de reloj principal
+set_io reset      1     # Pin de reset (activo alto)
+set_io en         34     # Pin de habilitación
+set_io direccion  33     # Pin de dirección (0=incremento, 1=decremento)
+
+# Salidas de cuenta (3 bits)
+set_io cuenta[0]  45     # Bit menos significativo
+set_io cuenta[1]  44     # 
+set_io cuenta[2]  43     # Bit más significativo

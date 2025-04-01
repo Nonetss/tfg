@@ -1,0 +1,137 @@
+$date
+  Tue Apr  1 18:29:59 2025
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module std_logic_arith $end
+$upscope $end
+$scope module std_logic_unsigned $end
+$upscope $end
+$scope module contador_tb $end
+$var reg 1 ! en $end
+$var reg 1 " direccion $end
+$var reg 1 # reset $end
+$var reg 1 $ clk $end
+$var reg 4 % cuenta[3:0] $end
+$scope module uut $end
+$var reg 1 & en $end
+$var reg 1 ' direccion $end
+$var reg 1 ( reset $end
+$var reg 1 ) clk $end
+$var reg 4 * cuenta[3:0] $end
+$var reg 4 + cont[3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+0"
+1#
+0$
+b0000 %
+0&
+0'
+1(
+0)
+b0000 *
+b0000 +
+#50000000
+1$
+1)
+#100000000
+0#
+0$
+0(
+0)
+#150000000
+1$
+1)
+#200000000
+1!
+0$
+1&
+0)
+#250000000
+1$
+b0001 %
+1)
+b0001 *
+b0001 +
+#300000000
+0$
+0)
+#350000000
+1$
+b0010 %
+1)
+b0010 *
+b0010 +
+#400000000
+0$
+0)
+#450000000
+1$
+b0011 %
+1)
+b0011 *
+b0011 +
+#500000000
+0$
+0)
+#550000000
+1$
+b0100 %
+1)
+b0100 *
+b0100 +
+#600000000
+1"
+0$
+1'
+0)
+#650000000
+1$
+b0011 %
+1)
+b0011 *
+b0011 +
+#700000000
+0$
+0)
+#750000000
+1$
+b0010 %
+1)
+b0010 *
+b0010 +
+#800000000
+0$
+0)
+#850000000
+1$
+b0001 %
+1)
+b0001 *
+b0001 +
+#900000000
+0$
+0)
+#950000000
+1$
+b0000 %
+1)
+b0000 *
+b0000 +
+#1000000000
+0$
+0)

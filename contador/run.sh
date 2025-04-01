@@ -19,7 +19,7 @@ ghdl -r -fsynopsys ${TB} --vcd=${ENTITY}.vcd --stop-time=1us
 # gtkwave ${ENTITY}.vcd &
 
 # Síntesis con Yosys (usando el plugin GHDL)
-yosys -m ghdl -p "ghdl ${ENTITY}.vhd -e ${ENTITY}; write_verilog build.v" || {
+yosys -m ghdl -p "ghdl -fsynopsys ${ENTITY}.vhd -e ${ENTITY}; write_verilog build.v" || {
   echo "❌ Yosys falló"
   exit 1
 }
