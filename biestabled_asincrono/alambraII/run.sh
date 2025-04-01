@@ -19,7 +19,7 @@ ghdl -a -fsynopsys ${ENTITY}.vhd
 # gtkwave ${ENTITY}.vcd &
 
 # Síntesis con Yosys (usando el plugin GHDL)
-yosys -m ghdl -p "ghdl boton_a_switch.vhd biestabled_asincrono.vhd ${ENTITY}.vhd -e ${ENTITY}; write_verilog build.v" || {
+yosys -m ghdl -p "ghdl divisor_reloj.vhd boton_a_switch.vhd biestabled_asincrono.vhd ${ENTITY}.vhd -e ${ENTITY}; write_verilog build.v" || {
   echo "❌ Yosys falló"
   exit 1
 }

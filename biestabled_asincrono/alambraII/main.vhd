@@ -22,24 +22,40 @@ architecture Behavioral of main is
         );
     end component;
 
-    -- Declarar componente biestable tipo D
-    component biestabled_asincrono
+    -- Declarar componente divisor de reloj
+    component divisor_reloj
         Port (
-            D     : in  STD_LOGIC;
-            clk   : in  STD_LOGIC;
-            Q     : out STD_LOGIC
+            clk_in  : in  STD_LOGIC;
+            clk_out : out STD_LOGIC
         );
     end component;
 
-    -- Señal interna que simula el switch
-    signal D_virtual : STD_LOGIC;
+    -- Declarar componente biestable tipo D
+    component biestabled_asincrono
+        Port (
+            D   : in  STD_LOGIC;
+            clk : in  STD_LOGIC;
+            Q   : out STD_LOGIC
+        );
+    end component;
+
+    -- Señales internas
+    signal clk_lento  : STD_LOGIC;
+    signal D_virtual  : STD_LOGIC;
 
 begin
 
-    -- Instancia del componente "switch digital"
+    -- Instancia del divisor de reloj
+    inst_divisor : divisor_reloj
+        port map (
+            clk_in  => clk,
+            clk_out => clk_lento
+        );
+
+    -- Instancia del switch virtual
     inst_virtual_switch : boton_a_switch
         port map (
-            clk     => clk,
+            clk     => clk_lento,
             btn_set => btn_set,
             btn_clr => btn_clr,
             salida  => D_virtual
@@ -48,9 +64,9 @@ begin
     -- Instancia del biestable tipo D
     inst_biestable : biestabled_asincrono
         port map (
-            D     => D_virtual,
-            clk   => clk,
-            Q     => Q
+            D   => D_virtual,
+            clk => clk_lento,
+            Q   => Q
         );
 
 end Behavioral;

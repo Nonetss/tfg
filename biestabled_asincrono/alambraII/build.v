@@ -34,9 +34,38 @@ module boton_a_switch(clk, btn_set, btn_clr, salida);
   assign salida = estado;
 endmodule
 
+module divisor_reloj(clk_in, clk_out);
+  reg _0_ = 1'h0;
+  wire _1_;
+  wire _2_;
+  wire [31:0] _3_;
+  wire [31:0] _4_;
+  reg [31:0] _5_ = 32'd0;
+  wire _6_;
+  wire clk_div;
+  input clk_in;
+  wire clk_in;
+  output clk_out;
+  wire clk_out;
+  wire [31:0] contador;
+  assign _1_ = contador == 32'd5999999;
+  assign _2_ = ~ clk_div;
+  assign _3_ = contador + 32'd1;
+  assign _4_ = _1_ ? 32'd0 : _3_;
+  always @(posedge clk_in)
+    _5_ <= _4_;
+  assign _6_ = _1_ ? _2_ : clk_div;
+  always @(posedge clk_in)
+    _0_ <= _6_;
+  assign contador = _5_;
+  assign clk_div = _0_;
+  assign clk_out = clk_div;
+endmodule
+
 module main(clk, btn_set, btn_clr, Q);
   wire _0_;
   wire _1_;
+  wire _2_;
   output Q;
   wire Q;
   input btn_clr;
@@ -45,22 +74,30 @@ module main(clk, btn_set, btn_clr, Q);
   wire btn_set;
   input clk;
   wire clk;
+  wire clk_lento;
   wire d_virtual;
-  wire \inst_biestable:4 ;
-  wire \inst_virtual_switch:1 ;
+  wire \inst_biestable:7 ;
+  wire \inst_divisor:1 ;
+  wire \inst_virtual_switch:4 ;
   biestabled_asincrono inst_biestable (
-    .clk(clk),
+    .clk(clk_lento),
     .d(d_virtual),
-    .q(_1_)
+    .q(_2_)
+  );
+  divisor_reloj inst_divisor (
+    .clk_in(clk),
+    .clk_out(_0_)
   );
   boton_a_switch inst_virtual_switch (
     .btn_clr(btn_clr),
     .btn_set(btn_set),
-    .clk(clk),
-    .salida(_0_)
+    .clk(clk_lento),
+    .salida(_1_)
   );
-  assign d_virtual = \inst_virtual_switch:1 ;
-  assign \inst_virtual_switch:1  = _0_;
-  assign \inst_biestable:4  = _1_;
-  assign Q = \inst_biestable:4 ;
+  assign clk_lento = \inst_divisor:1 ;
+  assign d_virtual = \inst_virtual_switch:4 ;
+  assign \inst_divisor:1  = _0_;
+  assign \inst_virtual_switch:4  = _1_;
+  assign \inst_biestable:7  = _2_;
+  assign Q = \inst_biestable:7 ;
 endmodule
