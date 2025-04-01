@@ -1,0 +1,59 @@
+$date
+  Tue Apr  1 18:08:55 2025
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module std_logic_arith $end
+$upscope $end
+$scope module std_logic_unsigned $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module comparador_tb $end
+$var reg 4 ! a[3:0] $end
+$var reg 4 " b[3:0] $end
+$var reg 1 # amayorb $end
+$var reg 1 $ aigualb $end
+$var reg 1 % amenorb $end
+$scope module uut $end
+$var reg 4 & a[3:0] $end
+$var reg 4 ' b[3:0] $end
+$var reg 1 ( amayorb $end
+$var reg 1 ) aigualb $end
+$var reg 1 * amenorb $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b0011 !
+b0010 "
+1#
+0$
+0%
+b0011 &
+b0010 '
+1(
+0)
+0*
+#100000000
+b0011 "
+0#
+1$
+b0011 '
+0(
+1)
+#200000000
+b0010 !
+0$
+1%
+b0010 &
+0)
+1*
