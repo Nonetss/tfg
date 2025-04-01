@@ -1,8 +1,3 @@
-------------------------------------------------------------------------------------------------
--- Descripción VHDL del bloque controlador de la librería DigitalLib 
-
--- Desarrollado por Irene Bujalance Fernández
-------------------------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

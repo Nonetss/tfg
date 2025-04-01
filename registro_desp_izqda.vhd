@@ -1,9 +1,3 @@
-------------------------------------------------------------------------------------------------
--- Descripción VHDL del bloque registro de desplazamiento a la izquierda de la librería DigitalLib 
--- con el número en decimal que tenemos en este registro (carga_inicial), número de veces que se desplaza hacia la derecha (desp) y precisión en los datos de entrada (n) parametrizable
-
--- Desarrollado por Irene Bujalance Fernández
-------------------------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;

@@ -1,9 +1,3 @@
---------------------------------------------------------------------------------
--- Descripción VHDL parametrizable del test de prueba para el bloque biestable JK asíncrono
-
--- Desarrollado por Irene Bujalance Fernández
---------------------------------------------------------------------------------
-
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
  

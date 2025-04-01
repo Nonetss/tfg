@@ -1,8 +1,3 @@
---------------------------------------------------------------------------------
--- Descripción VHDL parametrizable del test de prueba para el bloque codificador
-
--- Desarrollado por Irene Bujalance Fernández
---------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;

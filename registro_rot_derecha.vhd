@@ -1,9 +1,3 @@
-------------------------------------------------------------------------------------------------
--- Descripción VHDL del bloque registro de desplazamiento a la derecha de la librería DigitalLib 
--- con el número en decimal que tenemos en este registro (carga_inicial), número de veces que se desplaza hacia la derecha (desp) y precisión en los datos de entrada (n) parametrizable
-
--- Desarrollado por Irene Bujalance Fernández
-------------------------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
@@ -31,7 +25,7 @@ process (reset,clk)
 
 begin
 
-if reset='1' then -- Hemos escogido el reset a la alta, para ponerlo a la baja, basta con cambiar el 1 por un 0
+if reset='1' then 
 
 datos<=bit_vector(to_unsigned(carga_inicial,n));
 

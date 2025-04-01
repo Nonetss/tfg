@@ -1,8 +1,3 @@
-------------------------------------------------------------------------------------------------
--- Descripción VHDL del bloque biestable T asíncrono de la librería DigitalLib 
-
--- Desarrollado por Irene Bujalance Fernández
-------------------------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -21,7 +16,7 @@ process(clk)
 
 begin
 
-		if (reset='1') then --se ha elegido reset activo a la alta, si el usuario quiere cambiarlo, se pone a 0
+		if (reset='1') then 
 		dato<='0';
 		elsif (rising_edge(clk)) then
 			if (T='0') then

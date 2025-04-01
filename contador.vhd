@@ -1,9 +1,3 @@
-------------------------------------------------------------------------------------------------
--- Descripción VHDL del bloque contador de la librería DigitalLib 
--- con precisión en los datos de entrada (n) parametrizable
-
--- Desarrollado por Irene Bujalance Fernández
-------------------------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
@@ -13,9 +7,9 @@ use ieee.std_logic_unsigned.all;
 
 
 entity contador is
-	generic (n: integer:=3); -- número de bits hasta el que puede llegar el contador
+	generic (n: integer:=3); 
     Port ( en : in  STD_LOGIC;
-		direccion: in std_logic; -- direccion=0 => ascendente; direccion=1 => descendente.
+		direccion: in std_logic; 
            reset : in  STD_LOGIC;
            clk : in  STD_LOGIC;
            cuenta : out  STD_LOGIC_VECTOR (n-1 downto 0));

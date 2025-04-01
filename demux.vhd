@@ -1,17 +1,11 @@
------------------------------------------------------------------------------------------------
--- Descripción VHDL del bloque demultiplexor de la librería DigitalLib 
--- con número de entradas de control (c) y precisión en los datos de entrada (n) parametrizable
-
--- Desarrollado por Irene Bujalance Fernández
-------------------------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use ieee.numeric_std.all;
 
 entity demux is
-generic (c: integer:=2; --número de entradas de control
-	    n: integer:=2); --número de bits
+generic (c: integer:=2;
+	    n: integer:=2); 
 Port (entrada : in  STD_LOGIC_VECTOR(n-1 downto 0);
       control : in  STD_LOGIC_VECTOR (c-1 downto 0);
       salida : out  STD_LOGIC_VECTOR (((2**c)*n)-1 downto 0));

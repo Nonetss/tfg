@@ -7,7 +7,6 @@ END sumador_jerarquico_tb;
  
 ARCHITECTURE behavior OF sumador_jerarquico_tb IS 
  
-    -- Component Declaration for the Unit Under Test (UUT)
  
     COMPONENT sumador_jerarquico
     PORT(

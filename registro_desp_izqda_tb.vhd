@@ -1,8 +1,3 @@
---------------------------------------------------------------------------------
--- Descripción VHDL parametrizable del test de prueba para el bloque registro de desplazamiento a la izquierda
-
--- Desarrollado por Irene Bujalance Fernández
---------------------------------------------------------------------------------
   LIBRARY ieee;
   USE ieee.std_logic_1164.ALL;
   USE ieee.numeric_std.ALL;
