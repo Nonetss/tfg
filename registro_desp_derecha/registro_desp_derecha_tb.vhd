@@ -1,60 +1,75 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
 
+ENTITY registro_desp_derecha_tb IS
+  GENERIC (
+    n: INTEGER := 4;
+    carga_inicial: INTEGER := 3;
+    desp: INTEGER := 1
+  );
+END registro_desp_derecha_tb;
 
-  LIBRARY ieee;
-  USE ieee.std_logic_1164.ALL;
-  USE ieee.numeric_std.ALL;
+ARCHITECTURE behavior OF registro_desp_derecha_tb IS 
 
-  ENTITY registro_desp_derecha_tb IS
-  generic (n:integer:=4;
-			carga_inicial: integer:=3;
-         desp:integer:=1);
-  END registro_desp_derecha_tb;
+  COMPONENT registro_desp_derecha
+    GENERIC (
+      n: INTEGER := 4;
+      carga_inicial: INTEGER := 3;
+      desp: INTEGER := 1
+    );
+    PORT ( 
+      clk : IN STD_LOGIC;
+      reset: IN STD_LOGIC;
+      Q : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0)  -- Changed to STD_LOGIC_VECTOR
+    );
+  END COMPONENT;
 
-  ARCHITECTURE behavior OF registro_desp_derecha_tb IS 
+  SIGNAL clk: STD_LOGIC := '0';
+  SIGNAL reset: STD_LOGIC := '1';
+  SIGNAL Q : STD_LOGIC_VECTOR(n-1 DOWNTO 0);  -- Changed to STD_LOGIC_VECTOR
 
-          COMPONENT registro_desp_derecha
-          generic (n:integer:=4;
-			   carga_inicial: integer:=3;
-        		   desp:integer:=1);
-		Port ( clk : in  STD_LOGIC;
-			  reset: in std_logic;
-			  Q : out  bit_VECTOR (n-1 downto 0));
-          END COMPONENT;
+  CONSTANT clk_period : TIME := 200 ns;  -- Matches your 100ns half-period
 
-          signal clk:  std_logic;
-	     signal reset: std_logic;
+BEGIN
 
-          signal Q :  bit_vector(n-1 downto 0);
-          
+  uut: registro_desp_derecha 
+    GENERIC MAP (
+      n => 4,
+      carga_inicial => 3,
+      desp => 1
+    )
+    PORT MAP(
+      clk => clk,
+      reset => reset,
+      Q => Q
+    );
 
+  -- Clock generation process
+  clk_process: PROCESS
   BEGIN
+    clk <= '0';
+    WAIT FOR clk_period/2;
+    clk <= '1';
+    WAIT FOR clk_period/2;
+  END PROCESS;
 
-         uut: registro_desp_derecha 
-			 generic map (n=>4,
-					   carga_inicial=>3,
-					   desp=>1)
-			 PORT MAP(
-                  clk => clk,
-                  reset => reset,
-			  Q => Q
-                  );
+  -- Stimulus process
+  stim_proc: PROCESS
+  BEGIN		
+    reset <= '1';
+    WAIT FOR 100 ns;
+    
+    reset <= '0';
+    
+    -- Add stimulus pattern here if needed
+    -- Example:
+    -- WAIT FOR 500 ns;
+    -- reset <= '1';
+    -- WAIT FOR 100 ns;
+    -- reset <= '0';
+    
+    WAIT; -- Stop simulation
+  END PROCESS;
 
-
-   clk_process :process
-   begin
-	clk <= '0';
-	wait for 100 ns;
-	clk <= '1';
-	wait for 100 ns;
-	end process;
-
-   stim_proc: process
-   begin		
-      reset<='1';
-      wait for 100 ns;	
-	 reset<='0';
-	 wait for 100 ns;
-      wait;
-   end process;
-
-END;
+END behavior;
