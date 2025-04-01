@@ -1,14 +1,14 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity biestabled_sincrono is
+entity biestablet_asincrono is
     Port ( T : in  STD_LOGIC;
            clk : in  STD_LOGIC;
            reset : in  STD_LOGIC;
            Q : out  STD_LOGIC);
-end biestabled_sincrono;
+end biestablet_asincrono;
 
-architecture Behavioral of biestabled_sincrono is
+architecture Behavioral of biestablet_asincrono is
 signal dato: std_logic;
 begin
 
