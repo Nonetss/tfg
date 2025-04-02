@@ -4,7 +4,7 @@ set -e  # Salir si hay errores
 set -x  # Mostrar comandos
 
 # Nombres base
-ENTITY=biestablejk_asincrono
+ENTITY=biestablet_sincrono
 TB=${ENTITY}_tb
 
 # Análisis y simulación con GHDL

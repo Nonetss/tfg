@@ -49,7 +49,7 @@ end process;
    begin		
       T<='0';reset<='0';
       wait for 150 ns;	
-	 D<='1';reset<='1';
+	 Q<='1';reset<='1';
 	 wait for 100 ns;	
 	 T<='1';
 	 wait for 100 ns;

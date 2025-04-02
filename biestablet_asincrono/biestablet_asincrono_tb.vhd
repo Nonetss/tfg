@@ -2,13 +2,13 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
  
  
-ENTITY biestabled_sincrono_tb IS
-END biestabled_sincrono_tb;
+ENTITY biestablet_asincrono_tb IS
+END biestablet_asincrono_tb;
  
-ARCHITECTURE behavior OF biestabled_sincrono_tb IS 
+ARCHITECTURE behavior OF biestablet_asincrono_tb IS 
  
      
-    COMPONENT biestabled_sincrono
+    COMPONENT biestabled_asincrono
     PORT(
          T : IN  std_logic;
          clk : IN  std_logic;
@@ -27,7 +27,7 @@ ARCHITECTURE behavior OF biestabled_sincrono_tb IS
  
 BEGIN
  
-   uut: biestabled_sincrono PORT MAP (
+   uut: biestabled_asincrono PORT MAP (
           T => T,
           clk => clk,
           reset => reset,
